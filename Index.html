@@ -1,92 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dr. Alok Tiwari | Research Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alok Tiwari - Postdoctoral Researcher</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-title {
+            color: #0056B3; /* Primary blue from CV */
+            border-bottom: 2px solid #0056B3;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .project-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .expandable-content.expanded {
+            max-height: 1500px; /* Increased max-height for images and new content */
+            transition: max-height 0.7s ease-in;
+        }
+        .expand-button, .gemini-button {
+            color: #0056B3;
+            cursor: pointer;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-right: 1rem; /* Space between buttons */
+            padding: 0.5rem 1rem;
+            border: 1px solid #0056B3;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .expand-button:hover, .gemini-button:hover {
+            background-color: #0056B3;
+            color: white;
+        }
+        .expand-button i, .gemini-button i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .expand-button.expanded i {
+            transform: rotate(180deg);
+        }
+        .icon-link {
+            transition: color 0.3s ease;
+        }
+        .icon-link:hover {
+            color: #007bff; /* Lighter blue on hover */
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+        .project-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .llm-summary {
+            background-color: #e6f0fa; /* Light blue background for summary */
+            border-left: 4px solid #0056B3;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0056B3;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Style for publication list items */
+        .pub-list li, .skill-list li {
+            margin-bottom: 0.5rem;
+        }
+        .pub-list li:last-child, .skill-list li:last-child {
+            margin-bottom: 0;
+        }
+        .darker-header-bg {
+            background-color: #003366; /* Darker shade of blue for the header */
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Dr. Alok Tiwari</h1>
-      <p>Postdoctoral Researcher, The University of Sheffield</p>
-      <p>Email: <a href="mailto:alok.tiwari@sheffield.ac.uk">alok.tiwari@sheffield.ac.uk</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-    </div>
-  </header>
-  
-  <nav>
-    <ul>
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <main class="container">
-    <section id="summary">
-      <h2>Summary & Vision</h2>
-      <p>Highly motivated researcher specializing in computational modelling for lithium-ion batteries. Proven track record in DEM, CFD, and multi-scale modeling. Passionate about bridging particle science and next-generation energy technologies.</p>
-    </section>
-    
-    <section id="projects">
-      <h2>Key Projects</h2>
-      <ul>
-        <li>
-          <h3>Understanding Calendering Behaviour in Lithium-ion Battery Electrodes</h3>
-          <p>Exploring compression behaviour via DEM and experiments, with applications in manufacturing optimization.</p>
-        </li>
-        <li>
-          <h3>Calendering Temperature Effects</h3>
-          <p>Coupled DEM and heat transfer modeling to study microstructure and electrochemical performance.</p>
-        </li>
-        <li>
-          <h3>Granular Bed Vibration Studies</h3>
-          <p>Investigated granular temperature, stresses, and mixing behaviour in vibrated beds using DEM.</p>
-        </li>
-      </ul>
-    </section>
-    
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li><strong>Physical Review E (2025)</strong>: Role of stiffness ratio in vibrofluidized particles</li>
-        <li><strong>Particulate Science and Technology (2023)</strong>: DEM simulation of dumbbell-shaped particles</li>
-        <li><strong>Journal of Safety Science and Resilience (2020)</strong>: COVID-19 epidemic modeling</li>
-      </ul>
-      <p><a href="your_CV.pdf" download>Download my full CV</a></p>
-    </section>
-    
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p>Add research photos, diagrams, conference presentations, etc. below:</p>
-      <div class="gallery">
-        <img src="images/photo1.jpg" alt="Research Photo 1">
-        <img src="images/photo2.jpg" alt="Research Photo 2">
-        <img src="images/photo3.jpg" alt="Conference Talk">
-        <!-- Add more images in the images/ folder -->
-      </div>
-    </section>
-    
-    <section id="contact">
-      <h2>Contact</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"/>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"/>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message"></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-  
-  <footer>
-    <p>© 2025 Dr. Alok Tiwari</p>
-  </footer>
+
+    <!-- Header Section -->
+    <header class="darker-header-bg text-white py-8 shadow-lg rounded-b-xl mb-8">
+        <div class="container text-center flex flex-col items-center">
+            <!-- Profile Picture Placeholder -->
+            <img src="https://placehold.co/150x150/FFF/0056B3?text=Alok" alt="Alok Tiwari Profile Picture" class="profile-pic">
+            <h1 class="text-5xl font-bold mb-2">Dr. Alok Tiwari</h1>
+            <p class="text-xl font-light mb-1">Postdoctoral Researcher</p>
+            <p class="text-lg font-medium mb-4">The Faraday Institution, UK | The University of Sheffield, UK</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="mailto:alok.tiwari@sheffield.ac.uk" class="text-white hover:text-lightgray transition-colors icon-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+447349271649" class="text-white hover:text-lightgray transition-colors icon-link" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+                <!-- Add LinkedIn or ORCID if desired -->
+                <!-- <a href="YOUR_LINKEDIN_PROFILE" target="_blank" class="text-white hover:text-lightgray transition-colors icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+                <!-- <a href="YOUR_ORCID_PROFILE" target="_blank" class="text-white hover:text-lightgray transition-colors icon-link" aria-label="ORCID"><i class="ai ai-orcid"></i></a> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+
+        <!-- Summary & Research Vision -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Summary & Research Vision</h2>
+            <p class="text-lg leading-relaxed">
+                Highly motivated and accomplished Postdoctoral Researcher with a strong background in physics-informed advanced computational modelling (Discrete Element Method, Computational Fluid Dynamics, Electrochemical Modelling) of Lithium-ion Batteries Electrode Manufacturing. Possessing a proven track record in interdisciplinary research, evidenced by publications in peer-reviewed journals, presentations at international conferences, active collaboration with leading institutions like the University of Oxford, and involvement in projects funded by prestigious bodies like the Faraday Institution. Seeking to leverage expertise in particle technology and electrode manufacturing, focusing on the development of next-generation electrodes for the lithium-ion and solid-state batteries. My vision is to advance both fundamental understanding and practical applications in the field through collaboration with both industries and academia across Europe and UK.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Education</h2>
+            <ul class="list-none p-0 m-0">
+                <li class="mb-3">
+                    <h3 class="text-xl font-semibold text-darkgray">Doctorate (2025)</h3>
+                    <p class="text-lg">Indian Institute of Technology (IIT) Bombay, India <span class="float-right text-gray-600 italic">Granular Physics</span></p>
+                </li>
+                <li class="mb-3">
+                    <h3 class="text-xl font-semibold text-darkgray">Post Graduation (2019)</h3>
+                    <p class="text-lg">Indian Institute of Technology (IIT) Bombay, India <span class="float-right text-gray-600 italic">Energy Science and Engineering</span></p>
+                </li>
+                <li>
+                    <h3 class="text-xl font-semibold text-darkgray">Graduation (2016)</h3>
+                    <p class="text-lg">Banaras Hindu University, India <span class="float-right text-gray-600 italic">Mathematics and Physics</span></p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Research Experience & Key Projects -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Research Experience & Key Projects</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                My research is deeply rooted in a multi-scale approach, bridging fundamentals of particle science and granular mechanics with real-world applications in energy storage. I investigate the particle-level behaviour of a granular system to understand the physics behind its bulk behaviour, particularly within battery technologies. Each project below demonstrates my ability to blend theoretical understanding, advanced computational modelling, and problem-solving to improve the physical understanding and performance of the complex systems.
+            </p>
+
+            <!-- Project 1: Understanding the Physics Behind the Calendering behaviour of a Lithium-ion Battery Electrode. -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">Understanding the Physics Behind the Calendering behaviour of a Lithium-ion Battery Electrode</h3>
+                <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield | Jan 2025 - Present</p>
+                <p class="text-sm mb-3"><strong class="text-primaryblue">Funding:</strong> This project is part of a larger initiative funded by the <strong class="text-darkgray">Faraday Institution, UK</strong>.</p>
+                <div class="expandable-content" id="project1-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Electrode+Calendering+Study" alt="Electrode Calendering Study Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> To investigate the compression behaviour of battery electrodes using a combined Discrete Element Method (DEM) and experimental approach.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Successfully demonstrated that an empirical equation, traditionally applied to pharmaceutical powders, accurately models battery electrode compression. This work provides critical insights into optimizing electrode manufacturing by understanding particle packing and deformation.</li>
+                    </ul>
+                    <div id="summary-project1" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project1-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project1-content', 'summary-project1', 'Investigated lithium-ion battery electrode compression using simulations and experiments. Found a known equation models it well, offering insights for better manufacturing by understanding how particles pack and deform.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 2: Role of Calendering Temperature on Mechanical and Electrochemical Properties of LiB Electrode using DEM -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">Role of Calendering Temperature on Mechanical and Electrochemical Properties of LiB Electrode using DEM</h3>
+                <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield (in collaboration with The University of Oxford) | Nov 2024 - Present</p>
+                <div class="expandable-content" id="project2-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Battery+Electrode+Thermal+Modeling" alt="Battery Electrode Thermal Modeling Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> To develop a comprehensive simulation model to explore the influence of calendering machine temperature and pressure on the microstructure and subsequent electrochemical performance, specifically by analysing the behaviour of active material particles within lithium-ion battery electrodes.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Implemented the EEPA model for polydisperse spherical active material particles within DEM, coupled with a rigid bond model for the CBD phase, and integrated a heat conduction model to simulate particle-level thermal effects. Utilised COMSOL for electrochemical performance evaluation, demonstrating interdisciplinary modelling capabilities.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Analysed the effect of temperature on the microstructural evolution of an electrode and its implications for battery performance, offering better control over the calendering parameters to design next-gen electrodes.</li>
+                    </ul>
+                    <div id="summary-project2" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project2-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project2-content', 'summary-project2', 'Developed a simulation model to study how temperature and pressure during battery electrode manufacturing affect its structure and performance. This helps control the process to design better next-generation electrodes.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 3: The effect of the ratio of tangential to normal spring stiffness on the bulk-behaviour of a vibrated bed. -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">The effect of the ratio of tangential to normal spring stiffness on the bulk-behaviour of a vibrated bed</h3>
+                <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | June 2023 - Mar 2024</p>
+                <div class="expandable-content" id="project3-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Vibrated+Bed+Stiffness+Study" alt="Vibrated Bed Stiffness Study Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Investigated the role of the ratio of tangential to normal spring stiffness of the linear spring dashpot on the granular temperature, stresses and volume fraction of a vertically vibrated bed.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> It is shown that the ratio of 2/7 presents a significant difference in the bulk-behaviour of the vibrated bed in comparison to any other value in the physical regime. This work makes a significant contribution to how a simulation modelling parameter influences the bulk behaviour.</li>
+                    </ul>
+                    <div id="summary-project3" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project3-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project3-content', 'summary-project3', 'Explored how the stiffness ratio of springs between particles affects the behavior of vibrating beds using simulations. Found a specific ratio significantly changes how the bed behaves, showing how simulation settings influence overall results.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 4: Distribution of energies in a vertically vibrated granular bed -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">Distribution of energies in a vertically vibrated granular bed</h3>
+                <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Dec 2022 - Jan 2024</p>
+                <div class="expandable-content" id="project4-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Granular+Energy+Distribution" alt="Granular Energy Distribution Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Investigated the impact of interparticle friction on the micro and macroscopic behaviour of particles in vibro-fluidised beds, a process relevant to various industrial applications including the handling and mixing of granular materials in pharmaceutical and food industries.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Performed DEM simulations for particles of varying friction in a vertically vibrated bed to obtain the distribution of energies within the bed. Exchange of energies within the modes is quantified by tracking individual contacts.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Demonstrated that the equipartition of energies among the translational and rotational modes does not hold for any real granular system. This work gives a fundamental understanding of how vibrational energy is distributed among different modes.</li>
+                    </ul>
+                    <div id="summary-project4" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project4-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project4-content', 'summary-project4', 'Studied how energy is distributed among particles in vibrating beds, relevant to industries like pharmaceuticals. Found that energy doesn\'t always distribute evenly, giving a basic understanding of how vibrations affect granular materials.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 5: Impact of Vibrational Energy on the Deagglomeration of Cohesive Granular Particles -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">Impact of Vibrational Energy on the Deagglomeration of Cohesive Granular Particles</h3>
+                <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Nov 2023</p>
+                <div class="expandable-content" id="project5-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Particle+Deagglomeration" alt="Particle Deagglomeration Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Modelled vibration-induced deagglomeration as a rate kinetic process at the particle level, crucial for understanding and controlling powder processing in battery manufacturing, especially for fine active materials.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Studied the temporal evolution of cluster size, consisting of multiple interacting particles, under vertical vibrations to determine rate constants governing their breakup.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Established deagglomeration as a first-order process and demonstrated an exponential relationship between the rate constant and agglomerate strength/input vibrational energy, providing mechanistic insights into how external energy can break inter-particle bonds.</li>
+                    </ul>
+                    <div id="summary-project5" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project5-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project5-content', 'summary-project5', 'Created a model for breaking apart sticky particles using vibrations, important for battery manufacturing. Showed how vibration energy affects how fast these particle clumps break, revealing how to control them.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 6: DEM Study on the Mixing of Dumbbell Shaped Particles in a Cylindrical Container -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">DEM Study on the Mixing of Dumbbell Shaped Particles in a Cylindrical Container</h3>
+                <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Oct 2022</p>
+                <div class="expandable-content" id="project6-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Dumbbell+Particle+Mixing" alt="Dumbbell Particle Mixing Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Investigated the mixing and segregation behavior of non-spherical particles (dumbbell-shaped) under vibration, highly relevant to the uniform distribution of novel, non-spherical electrode materials and additives.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Quantified granular temperature, coordination number, collision frequency, and velocity distribution by tracking individual non-spherical particles for varying aspect ratios and vibrational amplitudes.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Revealed that fluctuating kinetic energies increases with energy input primarily for lower aspect ratio particles, and coordination number correlates with aspect ratio, providing insights into how particle shape influences mixing efficiency in a granular system consisting of non-spherical particles.</li>
+                    </ul>
+                    <div id="summary-project6" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project6-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project6-content', 'summary-project6', 'Studied how non-spherical, dumbbell-shaped particles mix in a vibrating container. Found that particle shape affects mixing efficiency, providing insights for designing materials with better uniformity.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 7: Morphological Analysis of Cohesive Particles Generated Using DEM -->
+            <div class="project-item">
+                <h3 class="text-xl font-bold text-darkgray mb-1">Morphological Analysis of Cohesive Particles Generated Using DEM</h3>
+                <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Jan 2019 - Sep 2021</p>
+                <div class="expandable-content" id="project7-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=Cohesive+Particle+Morphology" alt="Cohesive Particle Morphology Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Explored the influence of interparticle cohesiveness on the morphology of agglomerates, critical for controlling the properties and performance of active materials in battery electrodes.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Generated agglomerates of varying sizes via DEM, explicitly modelling interparticle contacts using a linear spring-dashpot model to simulate cohesive forces between particles.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Quantified morphological parameters (porosity, coordination number, fractal dimension) and demonstrated their increase with cohesiveness, enhancing understanding of how particle interactions influence the final structure of a cohesive system.</li>
+                    </ul>
+                    <div id="summary-project7" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project7-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project7-content', 'summary-project7', 'Investigated how sticky particles form clumps and their shapes using simulations. Found that stickiness affects the clump\'s structure, helping to control properties of materials like those in battery electrodes.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 8: CFD Analysis of a Custom-Built Atomic Layer Deposition (ALD) Reactor -->
+            <div class="project-item border-b-0 pb-0 mb-0">
+                <h3 class="text-xl font-bold text-darkgray mb-1">CFD Analysis of a Custom-Built Atomic Layer Deposition (ALD) Reactor</h3>
+                <p class="text-gray-700 text-sm italic mb-2">MSc. Project | IIT Bombay | Jan 2018 - Dec 2018</p>
+                <div class="expandable-content" id="project8-content">
+                    <img src="https://placehold.co/600x300/e0e0e0/333333?text=ALD+Reactor+CFD+Analysis" alt="ALD Reactor CFD Analysis Image" class="project-image">
+                    <ul class="list-disc pl-5 text-base leading-relaxed">
+                        <li><strong class="text-darkgray">Objective:</strong> Simulated carrier gas behavior within an ALD reactor, a technique used for thin-film coating on individual particles to enhance their stability and performance.</li>
+                        <li><strong class="text-darkgray">Approach:</strong> Performed CFD simulations on ANSYS Fluent to determine temperature and velocity profiles of nitrogen for varying inlet flow rates, optimizing the uniform delivery of precursors to particles.</li>
+                        <li><strong class="text-darkgray">Contribution:</strong> Identified high temperature gradients and turbulence near the reactor inlet, providing valuable insights for optimizing ALD processes for particle surface modification.</li>
+                    </ul>
+                    <div id="summary-project8" class="llm-summary hidden"></div>
+                </div>
+                <div class="flex flex-wrap items-center">
+                    <button class="expand-button" onclick="toggleExpand('project8-content', this)">
+                        Read More <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <button class="gemini-button" onclick="generateSummary('project8-content', 'summary-project8', 'Simulated gas flow in an ALD reactor used for coating individual particles. Found ways to optimize how coating chemicals are delivered, improving particle surface modification processes.', this)">
+                        ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-lg">
+                <div>
+                    <h3 class="font-semibold text-darkgray mb-1">Programming Languages:</h3>
+                    <p>Python (NumPy, SciPy, Matplotlib, Pandas, Scikit-learn), MATLAB, HTML, CSS</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-darkgray mb-1">Simulation Packages:</h3>
+                    <p>LAMMPS, LIGGGHTS, Altair EDEM, MFIX, Ansys FLUENT, COMSOL, OpenFOAM</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-darkgray mb-1">Visualisation Tools:</h3>
+                    <p>OVITO, PARAVIEW</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-darkgray mb-1">Other Tools & Libraries:</h3>
+                    <p>ImageJ, LaTeX, Origin, GNUplot</p>
+                </div>
+                <div class="lg:col-span-3">
+                    <h3 class="font-semibold text-darkgray mb-1">Experimental Techniques:</h3>
+                    <p>Cell assembly (coin, pouch, 3-electrode), INSTRON compression testing, Electrode manufacturing, Particle Image Velocimetry (PIV), X-ray Diffraction (XRD), Atomic Layer Deposition (ALD).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications & Dissemination -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Publications & Dissemination <span class="text-xl text-gray-500">(Highlighting International Reach)</span></h2>
+            <p class="text-lg leading-relaxed mb-6">
+                My research outputs have been disseminated through high-impact journals and presented at leading international conferences, demonstrating my ability to communicate complex scientific findings effectively to a global audience.
+            </p>
+
+            <h3 class="text-xl font-bold text-darkgray mb-3">Journal Publications:</h3>
+            <ul class="list-disc pl-5 text-base leading-relaxed mb-6 pub-list">
+                <li>Tiwari, A., M. Bose, Breakage of an agglomerate under vibration. (To submit Physics of Fluids)</li>
+                <li>Tiwari, A., M. Bose, Understanding the role of particle friction coefficient on the equipartition and scaling of granular temperature using DEM. (To submit Physical Review Letters)</li>
+                <li>Tiwari, A., S. Ganguly, M. Bose and V. Kumaran (2025), Role of the ratio of tangential to normal stiffness coefficient on the behaviour of vibrofluidized particles, Physical Review E (Accepted).</li>
+                <li>Tiwari, A. and M. Bose, 2023. DEM simulation of dumbbell shaped particles under vertical vibration. Particulate Science and Technology, pp.1-12.</li>
+                <li>Tiwari, A. and M. Bose, 2022. Morphological analysis of nanoparticle agglomerates generated using DEM simulation. Particulate Science and Technology, 40(3), pp.373-381.</li>
+                <li>Tiwari, A., 2020. Modelling and analysis of COVID-19 epidemic in India. Journal of Safety Science and Resilience, 1(2), pp.135-140.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold text-darkgray mb-3">Conference Presentations:</h3>
+            <ul class="list-disc pl-5 text-base leading-relaxed mb-6 pub-list">
+                <li>Tiwari, A. et. al, 2025. Modeling the calendering process of lithium-ion battery electrodes using the Discrete Element Method, Powders and Grains, India.</li>
+                <li>Tiwari, A. and M. Bose, 2025. Modelling the breakage of a spherical agglomerate in a vertically vibrated granular bed, Powders and Grains, India.</li>
+                <li>M. Bose and A. Tiwari, 2024. Agglomeration and de-agglomeration of cohesive particles in a vertically vibrated bed, <strong class="text-darkgray">APS-DFD, USA.</strong></li>
+                <li>Tiwari, A. and M. Bose, 2023. Numerical simulation of vibro-fluidised inelastic particles with roughness using DEM, <strong class="text-darkgray">DEM9, Germany.</strong></li>
+                <li>Tiwari, A. and M. Bose, 2023. Rate kinetics of agglomeration and deagglomeration of nanoparticles using DEM, <strong class="text-darkgray">11th ICMF, Japan.</strong></li>
+                <li>Tiwari, A. and M. Bose, 2022. Impact of vibrational energy on the kinetics of deagglomeration of cohesive particles, CompFlu, India.</li>
+                <li>Tiwari, A. and M. Bose, 2020. Simulation of nano-agglomeration using the cohesive DEM algorithm, CompFlu, India.</li>
+                <li>Tiwari, A. Tomar, V. and M. Bose, 2020. Implementation of cohesive DEM to study agglomeration of nanoparticles, Third International Conference on Powder, Granule and Bulk solids: Innovations and Applications (PGBSIA), India.</li>
+            </ul>
+
+            <h3 class="text-xl font-bold text-darkgray mb-3">Selected Oral Presentations:</h3>
+            <ul class="list-disc pl-5 text-base leading-relaxed pub-list">
+                <li>Tiwari, A. and M. Bose, 2024 (Online). Kinetic theory based understanding of inelastic and rough granular gas using DEM, <strong class="text-darkgray">Mercury DPM, University of Twente, Netherlands.</strong></li>
+                <li>Tiwari, A. and M. Bose, 2023. Temporal dynamics of the deagglomeration process of cohesive granular materials, <strong class="text-darkgray">Delft University of Technology (TU Delft), Netherlands.</strong></li>
+                <li>Tiwari, A., 2021 (Online). An insight into COVID-19 situation of India - Fundraiser event organised by Brown and Feminist, University of Melbourne, Australia.</li>
+            </ul>
+        </section>
+
+        <!-- Organizational & Administrative Skills -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Organizational & Administrative Skills</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Demonstrated leadership, project management, and organizational capabilities through various roles. These experiences underscore my ability to work effectively in teams and manage complex initiatives, which are critical for collaborative research projects within MSCA.
+            </p>
+            <ul class="list-disc pl-5 text-base leading-relaxed skill-list">
+                <li class="mb-3">
+                    <strong class="text-darkgray">Warden Nominee Hostel 14</strong> | IIT Bombay (Aug 2021 - July 2022)<br>
+                    Nominated member of the hostel council responsible for managing hostel operations with an annual budget of \$50,000.
+                </li>
+                <li class="mb-3">
+                    <strong class="text-darkgray">Technical Team Head 7th International Conference on Advances in Energy Research</strong> | IIT Bombay (Sep 2019 - Mar 2020)<br>
+                    Led a team of 8 members in scheduling and planning technical sessions for an international conference attended by over 700 participants.
+                </li>
+                <li class="mb-3">
+                    <strong class="text-darkgray">Events Convener PG Sports</strong> | IIT Bombay (Aug 2018 - July 2019)<br>
+                    Responsible for the successful organization of 14 sports events for approximately 20 teams from various departments.
+                </li>
+                <li>
+                    <strong class="text-darkgray">Teaching Assistant</strong> | Department of Energy Science and Engineering | IIT Bombay (July 2018 - Dec 2021)<br>
+                    Mentored students in courses including Transport Phenomenon, Mechanics of Materials, Energy Resources, Economics and Environment, Energy Systems Lab, Renewable Energy Technologies, Energy Management.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Achievements -->
+        <section class="card">
+            <h2 class="text-3xl font-semibold section-title">Achievements</h2>
+            <ul class="list-disc pl-5 text-base leading-relaxed skill-list">
+                <li class="mb-2"><strong class="text-darkgray">Academic:</strong> Best Poster Award - ChemEng Day UK, 2025.</li>
+                <li class="mb-2"><strong class="text-darkgray">Academic:</strong> Received grant of £2000 from IIT Bombay to attend various national and international conferences.</li>
+                <li class="mb-2"><strong class="text-darkgray">Collaboration:</strong> Actively collaborating with research groups at the <strong class="text-darkgray">University of Oxford</strong> on further enhancing inter-institutional research ties.</li>
+                <li><strong class="text-darkgray">Funding:</strong> Involved in a research project supported by the <strong class="text-darkgray">Faraday Institution</strong>, contributing to cutting-edge battery science initiatives.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-darkgray text-white py-6 mt-8 text-center rounded-t-xl">
+        <p class="text-sm">&copy; 2025 Alok Tiwari. All rights reserved.</p>
+        <p class="text-xs mt-2">Built with HTML, Tailwind CSS, and <i class="fas fa-heart text-red-500"></i></p>
+    </footer>
+
+    <script>
+        // JavaScript for expandable project details
+        function toggleExpand(id, button) {
+            const content = document.getElementById(id);
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                button.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                button.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                button.classList.add('expanded');
+            }
+        }
+
+        // Function to generate LLM summary
+        async function generateSummary(contentId, summaryId, promptText, button) {
+            const summaryDiv = document.getElementById(summaryId);
+            const spinner = button.querySelector('.loading-spinner');
+
+            // Clear previous summary and show spinner
+            summaryDiv.innerHTML = '';
+            summaryDiv.classList.add('hidden');
+            spinner.classList.remove('hidden');
+            button.disabled = true; // Disable button during generation
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: `Provide a concise, accessible, and simple summary (2-3 sentences max) of the following research project, suitable for a general audience. Focus on the main objective and key contribution. Here is the project description: ${promptText}` }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // Canvas will automatically provide the API key
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    summaryDiv.innerHTML = `<p class="font-medium text-gray-800">Accessible Summary:</p><p>${text}</p>`;
+                    summaryDiv.classList.remove('hidden');
+                } else {
+                    summaryDiv.innerHTML = '<p class="text-red-500">Failed to generate summary. Please try again.</p>';
+                    summaryDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error generating summary:', error);
+                summaryDiv.innerHTML = '<p class="text-red-500">An error occurred while fetching the summary. Please check your connection.</p>';
+                summaryDiv.classList.remove('hidden');
+            } finally {
+                spinner.classList.add('hidden');
+                button.disabled = false; // Re-enable button
+            }
+        }
+    </script>
 </body>
 </html>
