@@ -50,7 +50,7 @@
             max-height: 1500px; /* Increased max-height for new content */
             transition: max-height 0.7s ease-in;
         }
-        .expand-button, .gemini-button {
+        .expand-button { /* Removed .gemini-button */
             color: #0056B3;
             cursor: pointer;
             font-weight: 500;
@@ -63,11 +63,11 @@
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .expand-button:hover, .gemini-button:hover {
+        .expand-button:hover { /* Removed .gemini-button:hover */
             background-color: #0056B3;
             color: white;
         }
-        .expand-button i, .gemini-button i {
+        .expand-button i { /* Removed .gemini-button i */
             margin-left: 0.5rem;
             transition: transform 0.3s ease;
         }
@@ -88,26 +88,7 @@
             border: 4px solid white;
             margin-bottom: 1rem;
         }
-        /* Removed .project-image style as images are being removed */
-        .llm-summary {
-            background-color: #e6f0fa; /* Light blue background for summary */
-            border-left: 4px solid #0056B3;
-            padding: 1rem;
-            margin-top: 1rem;
-            border-radius: 0.5rem;
-            animation: fadeIn 0.5s ease-in;
-        }
-        .loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0056B3;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
+        /* Removed .llm-summary and .loading-spinner styles */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -275,14 +256,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Successfully demonstrated that an empirical equation, traditionally applied to pharmaceutical powders, accurately models battery electrode compression. This work provides critical insights into optimizing electrode manufacturing by understanding particle packing and deformation.</li>
                         </ul>
-                        <div id="summary-project1" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project1-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project1-content', 'summary-project1', 'Investigated lithium-ion battery electrode compression using simulations and experiments. Found a known equation models it well, offering insights for better manufacturing by understanding how particles pack and deform.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -296,14 +273,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Implemented the EEPA model for polydisperse spherical active material particles within DEM, coupled with a rigid bond model for the CBD phase, and integrated a heat conduction model to simulate particle-level thermal effects. Utilised COMSOL for electrochemical performance evaluation, demonstrating interdisciplinary modelling capabilities.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Analysed the effect of temperature on the microstructural evolution of an electrode and its implications for battery performance, offering better control over the calendering parameters to design next-gen electrodes.</li>
                         </ul>
-                        <div id="summary-project2" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project2-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project2-content', 'summary-project2', 'Developed a simulation model to study how temperature and pressure during battery electrode manufacturing affect its structure and performance. This helps control the process to design better next-generation electrodes.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -317,14 +290,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> It is shown that the ratio of $2/7$ presents a significant difference in the bulk-behaviour of the vibrated bed in comparison to any other value in the physical regime. This work makes a significant contribution to how a simulation modelling parameter influences the bulk behaviour.</li>
                         </ul>
-                        <div id="summary-project3" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project3-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project3-content', 'summary-project3', 'Explored how the stiffness ratio of springs between particles affects the behavior of vibrating beds using simulations. Found a specific ratio significantly changes how the bed behaves, showing how simulation settings influence overall results.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -338,14 +307,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Performed DEM simulations for particles of varying friction in a vertically vibrated bed to obtain the distribution of energies within the bed. Exchange of energies within the modes is quantified by tracking individual contacts.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Demonstrated that the equipartition of energies among the translational and rotational modes does not hold for any real granular system. This work gives a fundamental understanding of how vibrational energy is distributed among different modes.</li>
                         </ul>
-                        <div id="summary-project4" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project4-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project4-content', 'summary-project4', 'Studied how energy is distributed among particles in vibrating beds, relevant to industries like pharmaceuticals. Found that energy doesn\'t always distribute evenly, giving a basic understanding of how vibrations affect granular materials.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -359,14 +324,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Studied the temporal evolution of cluster size, consisting of multiple interacting particles, under vertical vibrations to determine rate constants governing their breakup.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Established deagglomeration as a first-order process and demonstrated an exponential relationship between the rate constant and agglomerate strength/input vibrational energy, providing mechanistic insights into how external energy can break inter-particle bonds.</li>
                         </ul>
-                        <div id="summary-project5" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project5-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project5-content', 'summary-project5', 'Created a model for breaking apart sticky particles using vibrations, important for battery manufacturing. Showed how vibration energy affects how fast these particle clumps break, revealing how to control them.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -380,14 +341,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Quantified granular temperature, coordination number, collision frequency, and velocity distribution by tracking individual non-spherical particles for varying aspect ratios and vibrational amplitudes.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Revealed that fluctuating kinetic energies increases with energy input primarily for lower aspect ratio particles, and coordination number correlates with aspect ratio, providing insights into how particle shape influences mixing efficiency in a granular system consisting of non-spherical particles.</li>
                         </ul>
-                        <div id="summary-project6" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project6-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project6-content', 'summary-project6', 'Studied how non-spherical, dumbbell-shaped particles mix in a vibrating container. Found that particle shape affects mixing efficiency, providing insights for designing materials with better uniformity.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -401,12 +358,8 @@
                             <li><strong class="text-darkgray">Approach:</strong> Generated agglomerates of varying sizes via DEM, explicitly modelling interparticle contacts using a linear spring-dashpot model to simulate cohesive forces between particles.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Quantified morphological parameters (porosity, coordination number, fractal dimension) and demonstrated their increase with cohesiveness, enhancing understanding of how particle interactions influence the final structure of a cohesive system.</li>
                         </ul>
-                        <div id="summary-project7" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
-                        <button class="gemini-button" onclick="generateSummary('project7-content', 'summary-project7', 'Investigated how sticky particles form clumps and their shapes using simulations. Found that stickiness affects the clump\'s structure, helping to control properties of materials like those in battery electrodes.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
-                        </button>
                         <button class="expand-button" onclick="toggleExpand('project7-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
                         </button>
@@ -422,14 +375,10 @@
                             <li><strong class="text-darkgray">Approach:</strong> Performed CFD simulations on ANSYS Fluent to determine temperature and velocity profiles of nitrogen for varying inlet flow rates, optimizing the uniform delivery of precursors to particles.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Identified high temperature gradients and turbulence near the reactor inlet, providing valuable insights for optimizing ALD processes for particle surface modification.</li>
                         </ul>
-                        <div id="summary-project8" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
                         <button class="expand-button" onclick="toggleExpand('project8-content', this)">
                             Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                        <button class="gemini-button" onclick="generateSummary('project8-content', 'summary-project8', 'Simulated gas flow in an ALD reactor used for coating individual particles. Found ways to optimize how coating chemicals are delivered, improving particle surface modification processes.', this)">
-                            ✨ Generate Accessible Summary <span class="loading-spinner hidden"></span>
                         </button>
                     </div>
                 </div>
@@ -560,26 +509,6 @@
             } else {
                 button.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
             }
-        }
-
-        // Generate Accessible Summary (Simulated LLM Call)
-        function generateSummary(contentId, summaryId, predefinedSummary, button) {
-            const summaryDiv = document.getElementById(summaryId);
-            const spinner = button.querySelector('.loading-spinner');
-
-            // Show spinner and disable button
-            spinner.classList.remove('hidden');
-            button.disabled = true;
-
-            // Simulate API call delay
-            setTimeout(() => {
-                summaryDiv.innerHTML = `<p class="text-sm">${predefinedSummary}</p>`;
-                summaryDiv.classList.remove('hidden');
-
-                // Hide spinner and enable button
-                spinner.classList.add('hidden');
-                button.disabled = false;
-            }, 1500); // Simulate 1.5 seconds delay
         }
 
         // Project Filtering Logic
