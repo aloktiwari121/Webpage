@@ -47,7 +47,7 @@
             transition: max-height 0.5s ease-out;
         }
         .expandable-content.expanded {
-            max-height: 1500px; /* Increased max-height for images and new content */
+            max-height: 1500px; /* Increased max-height for new content */
             transition: max-height 0.7s ease-in;
         }
         .expand-button, .gemini-button {
@@ -88,14 +88,7 @@
             border: 4px solid white;
             margin-bottom: 1rem;
         }
-        .project-image {
-            width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
+        /* Removed .project-image style as images are being removed */
         .llm-summary {
             background-color: #e6f0fa; /* Light blue background for summary */
             border-left: 4px solid #0056B3;
@@ -277,11 +270,11 @@
                     <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield | Jan 2025 - Present</p>
                     <p class="text-sm mb-3"><strong class="text-primaryblue">Funding:</strong> This project is part of a larger initiative funded by the <strong class="text-darkgray">Faraday Institution, UK</strong>.</p>
                     <div class="expandable-content" id="project1-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Electrode+Calendering+Study" alt="Electrode Calendering Study Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
-                            <li><strong class="text-darkgray">Objective:</strong> Ongoing.</li>
-                            <li><strong class="text-darkgray">Approach:</strong> Ongoing</li>
-                            <li><strong class="text-darkgray">Contribution:</strong> Ongoing
+                            <li><strong class="text-darkgray">Objective:</strong> To investigate the compression behaviour of battery electrodes using a combined Discrete Element Method (DEM) and experimental approach.</li>
+                            <li><strong class="text-darkgray">Approach:</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
+                            <li><strong class="text-darkgray">Contribution:</strong> Successfully demonstrated that an empirical equation, traditionally applied to pharmaceutical powders, accurately models battery electrode compression. This work provides critical insights into optimizing electrode manufacturing by understanding particle packing and deformation.</li>
+                        </ul>
                         <div id="summary-project1" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
@@ -298,11 +291,11 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">Role of Calendering Temperature on Mechanical and Electrochemical Properties of LiB Electrode using DEM</h3>
                     <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield (in collaboration with The University of Oxford) | Nov 2024 - Present</p>
                     <div class="expandable-content" id="project2-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Battery+Electrode+Thermal+Modeling" alt="Battery Electrode Thermal Modeling Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
-                            <li><strong class="text-darkgray">Objective:</strong> Ongoing </li>
-                            <li><strong class="text-darkgray">Approach:</strong> Ongoing </li>
-                            <li><strong class="text-darkgray">Contribution:</strong> Ongoing
+                            <li><strong class="text-darkgray">Objective:</strong> To develop a comprehensive simulation model to explore the influence of calendering machine temperature and pressure on the microstructure and subsequent electrochemical performance, specifically by analysing the behaviour of active material particles within lithium-ion battery electrodes.</li>
+                            <li><strong class="text-darkgray">Approach:</strong> Implemented the EEPA model for polydisperse spherical active material particles within DEM, coupled with a rigid bond model for the CBD phase, and integrated a heat conduction model to simulate particle-level thermal effects. Utilised COMSOL for electrochemical performance evaluation, demonstrating interdisciplinary modelling capabilities.</li>
+                            <li><strong class="text-darkgray">Contribution:</strong> Analysed the effect of temperature on the microstructural evolution of an electrode and its implications for battery performance, offering better control over the calendering parameters to design next-gen electrodes.</li>
+                        </ul>
                         <div id="summary-project2" class="llm-summary hidden"></div>
                     </div>
                     <div class="flex flex-wrap items-center">
@@ -319,7 +312,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">The effect of the ratio of tangential to normal spring stiffness on the bulk-behaviour of a vibrated bed.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay June 2023 Mar 2024</p>
                     <div class="expandable-content" id="project3-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Vibrated+Bed+Stiffness+Study" alt="Vibrated Bed Stiffness Study Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Investigated the role of the ratio of tangential to normal spring stiffness of the linear spring dashpot on the granular temperature, stresses and volume fraction of a vertically vibrated bed.</li>
                             <li><strong class="text-darkgray">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
@@ -341,7 +333,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">Distribution of energies in a vertically vibrated granular bed.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Dec 2022 Jan 2024</p>
                     <div class="expandable-content" id="project4-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Granular+Energy+Distribution" alt="Granular Energy Distribution Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Investigated the impact of interparticle friction on the micro and macroscopic behaviour of particles in vibro-fluidised beds, a process relevant to various industrial applications including the handling and mixing of granular materials in pharmaceutical and food industries.</li>
                             <li><strong class="text-darkgray">Approach:</strong> Performed DEM simulations for particles of varying friction in a vertically vibrated bed to obtain the distribution of energies within the bed. Exchange of energies within the modes is quantified by tracking individual contacts.</li>
@@ -363,7 +354,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">Impact of Vibrational Energy on the Deagglomeration of Cohesive Granular Particles.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 Nov 2023</p>
                     <div class="expandable-content" id="project5-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Particle+Deagglomeration" alt="Particle Deagglomeration Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Modelled vibration-induced deagglomeration as a rate kinetic process at the particle level, crucial for understanding and controlling powder processing in battery manufacturing, especially for fine active materials.</li>
                             <li><strong class="text-darkgray">Approach:</strong> Studied the temporal evolution of cluster size, consisting of multiple interacting particles, under vertical vibrations to determine rate constants governing their breakup.</li>
@@ -385,7 +375,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">DEM Study on the Mixing of Dumbbell Shaped Particles in a Cylindrical Container.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Oct 2022</p>
                     <div class="expandable-content" id="project6-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Dumbbell+Particle+Mixing" alt="Dumbbell Particle Mixing Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Investigated the mixing and segregation behavior of non-spherical particles (dumbbell-shaped) under vibration, highly relevant to the uniform distribution of novel, non-spherical electrode materials and additives.</li>
                             <li><strong class="text-darkgray">Approach:</strong> Quantified granular temperature, coordination number, collision frequency, and velocity distribution by tracking individual non-spherical particles for varying aspect ratios and vibrational amplitudes.</li>
@@ -407,7 +396,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">Morphological Analysis of Cohesive Particles Generated Using DEM.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay Jan 2019 Sep 2021</p>
                     <div class="expandable-content" id="project7-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=Cohesive+Particle+Morphology" alt="Cohesive Particle Morphology Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Explored the influence of interparticle cohesiveness on the morphology of agglomerates, critical for controlling the properties and performance of active materials in battery electrodes.</li>
                             <li><strong class="text-darkgray">Approach:</strong> Generated agglomerates of varying sizes via DEM, explicitly modelling interparticle contacts using a linear spring-dashpot model to simulate cohesive forces between particles.</li>
@@ -429,7 +417,6 @@
                     <h3 class="text-xl font-bold text-darkgray mb-1">CFD Analysis of a Custom-Built Atomic Layer Deposition (ALD) Reactor.</h3>
                     <p class="text-gray-700 text-sm italic mb-2">MSc. Project | IIT Bombay Jan 2018 Dec 2018</p>
                     <div class="expandable-content" id="project8-content">
-                        <img src="https://placehold.co/600x300/e0e0e0/333333?text=ALD+Reactor+CFD+Analysis" alt="ALD Reactor CFD Analysis Image" class="project-image">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Simulated carrier gas behavior within an ALD reactor, a technique used for thin-film coating on individual particles to enhance their stability and performance.</li>
                             <li><strong class="text-darkgray">Approach:</strong> Performed CFD simulations on ANSYS Fluent to determine temperature and velocity profiles of nitrogen for varying inlet flow rates, optimizing the uniform delivery of precursors to particles.</li>
