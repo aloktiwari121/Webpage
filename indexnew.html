@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alok Tiwari - Postdoctoral Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://placehold.co/32x32/0056B3/FFFFFF?text=AT" type="image/x-icon"> <style>
+        /* Custom Variables for Easier Theming */
+        :root {
+            --primary-blue: #0056B3; /* Your existing primary blue */
+            --darker-blue: #003366; /* Your existing header blue */
+            --light-gray-bg: #f0f2f5; /* Body background */
+            --text-color: #333;
+            --secondary-text-color: #555;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-gray-bg);
+            color: var(--text-color);
+            line-height: 1.7; /* Slightly more relaxed line height */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue); /* Thicker border */
+            padding-bottom: 0.75rem; /* More padding */
+            margin-bottom: 2.5rem; /* More space below title */
+            font-size: 2.5rem; /* Slightly larger titles */
+            font-weight: 700;
+            text-align: center; /* Center section titles */
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 1rem; /* Slightly more rounded */
+            box-shadow: var(--shadow);
+            padding: 2.5rem; /* More internal padding */
+            margin-bottom: 2.5rem;
+            transition: transform var(--transition-speed) ease-in-out; /* Add subtle hover effect */
+        }
+
+        .card:hover {
+             transform: translateY(-5px); /* Lift card slightly on hover */
+        }
+
+
+        /* Header/Hero Section */
+        .hero-header {
+            background: linear-gradient(135deg, var(--darker-blue) 0%, var(--primary-blue) 100%); /* Gradient background */
+            color: white;
+            padding: 6rem 2rem; /* More vertical padding */
+            text-align: center;
+            border-bottom-left-radius: 2rem; /* More rounded bottom corners */
+            border-bottom-right-radius: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            position: relative;
+            overflow: hidden; /* For any background patterns/animations */
+        }
+
+        .hero-header::before { /* Subtle background pattern */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .profile-pic {
+            width: 180px; /* Larger image */
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--light-gray-bg); /* Thicker, contrasting border */
+            box-shadow: 0 0 0 4px var(--primary-blue); /* Outline with primary blue */
+            margin-bottom: 1.5rem;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05) rotate(3deg); /* Slight scale and rotate on hover */
+        }
+
+        .hero-header h1 {
+            font-size: 3.8rem; /* Even larger name */
+            font-weight: 800; /* Extra bold */
+            margin-bottom: 0.5rem;
+            color: white; /* Ensure name is white */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Subtle text shadow */
+        }
+
+        .hero-header p {
+            font-size: 1.35rem; /* Larger tagline */
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-header .social-links a {
+            color: white;
+            transition: color var(--transition-speed) ease-in-out, transform var(--transition-speed) ease-in-out;
+            font-size: 1.8rem;
+            margin: 0 0.75rem;
+        }
+        .hero-header .social-links a:hover {
+            color: #add8e6; /* Lighter blue on hover */
+            transform: translateY(-3px);
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: var(--card-bg); /* White background for nav */
+            padding: 0.75rem 0;
+            margin-bottom: 2.5rem; /* More space */
+            border-radius: 1rem; /* Consistent rounding */
+            box-shadow: var(--shadow);
+            position: sticky; /* Make navigation sticky */
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item {
+            margin: 0.5rem 1.2rem; /* Increased spacing */
+        }
+        .nav-link {
+            color: var(--primary-blue); /* Blue links */
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1rem;
+            border-radius: 0.75rem; /* More rounded pills */
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        .nav-link:hover {
+            background-color: var(--primary-blue); /* Blue background on hover */
+            color: white;
+            transform: translateY(-2px); /* Slight lift */
+        }
+
+        /* Project Items */
+        .project-item {
+            border-bottom: 1px solid var(--border-color); /* Lighter dashed border */
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: left; /* Align project text left */
+        }
+        .project-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .project-item h3 {
+            color: var(--darker-blue); /* Darker blue for project titles */
+            font-size: 1.7rem; /* Larger project titles */
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .project-item .text-gray-700 {
+            color: var(--secondary-text-color);
+            font-size: 0.95rem;
+        }
+        .project-item strong.text-darkgray {
+            color: var(--text-color); /* Ensure strong tags are dark */
+        }
+        .project-tags { /* Style for categories/tags */
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .project-tag {
+            background-color: var(--light-gray-bg);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.7rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+
+        /* Expand/Collapse Button */
+        .expand-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid var(--primary-blue); /* Solid border */
+            border-radius: 0.75rem; /* More rounded */
+            background-color: transparent; /* Transparent background */
+            color: var(--primary-blue);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            margin-top: 1rem;
+        }
+        .expand-button:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .expand-button.expanded i {
+            transform: rotate(180deg);
+        }
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-out; /* Smoother transition */
+        }
+        .expandable-content.expanded {
+            max-height: 1500px; /* Adjust as needed for content length */
+            transition: max-height 1s ease-in; /* Slower and smoother */
+        }
+
+        /* Filter Buttons */
+        .filter-button {
+            background-color: var(--border-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem; /* Larger buttons */
+            border-radius: 0.75rem; /* More rounded */
+            margin-right: 0.75rem; /* More space */
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            font-weight: 500;
+        }
+        .filter-button.active {
+            background-color: var(--primary-blue);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle shadow for active */
+        }
+        .filter-button:hover:not(.active) {
+            background-color: #d0d5dc; /* Slightly darker grey on hover */
+        }
+        .hidden-project {
+            display: none;
+        }
+
+        /* Skills Section */
+        .skills-grid-item {
+            background-color: var(--light-gray-bg); /* Light background for skill items */
+            padding: 1.2rem;
+            border-radius: 0.75rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Inner shadow for depth */
+        }
+        .skills-grid-item h3 {
+            color: var(--darker-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted var(--border-color); /* Dotted separator */
+            padding-bottom: 0.3rem;
+        }
+        .skill-list {
+            font-size: 0.95rem;
+            color: var(--secondary-text-color);
+            line-height: 1.5;
+        }
+
+        /* Publications */
+        .pub-list li {
+            margin-bottom: 0.75rem; /* More space between pubs */
+            line-height: 1.5;
+            color: var(--secondary-text-color);
+        }
+        .pub-list li strong {
+            color: var(--text-color);
+        }
+        .pub-list li a { /* Style for potential publication links */
+            color: var(--primary-blue);
+            text-decoration: underline;
+            transition: color var(--transition-speed) ease;
+        }
+        .pub-list li a:hover {
+            color: var(--darker-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-blue); /* Darker blue footer */
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2.5rem; /* Space before footer */
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color var(--transition-speed) ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-blue); /* Primary blue on hover */
+        }
+
+        /* Scroll-reveal effect (basic) */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero-header {
+                padding: 4rem 1rem;
+            }
+            .hero-header h1 {
+                font-size: 2.8rem;
+            }
+            .hero-header p {
+                font-size: 1.1rem;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .nav-list {
+                flex-direction: column; /* Stack nav items on small screens */
+                align-items: center;
+            }
+            .nav-item {
+                margin: 0.4rem 0;
+            }
+            .skills-grid-item {
+                margin-bottom: 1rem; /* Add some margin between stacked skill cards */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <div class="container text-center flex flex-col items-center">
+            <img src="https://placehold.co/200x200/0056B3/FFFFFF?text=Dr.+Alok" alt="Dr. Alok Tiwari Profile Picture" class="profile-pic">
+            <h1 class="font-bold mb-2">Dr. Alok Tiwari</h1>
+            <p class="font-light mb-1">Postdoctoral Researcher in Computational Materials Science</p>
+            <p class="font-medium mb-4">The Faraday Institution & The University of Sheffield, UK</p>
+            <div class="flex justify-center space-x-6 text-2xl social-links">
+                <a href="mailto:alok.tiwari@sheffield.ac.uk" class="icon-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+447349271649" class="icon-link" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" class="icon-link" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" class="icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourtwitterhandle" target="_blank" class="icon-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+        </div>
+    </header>
+
+    <nav class="nav-bar container">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li>
+            <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+            </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="summary" class="card scroll-reveal">
+            <h2 class="section-title">Summary & Research Vision</h2>
+            <p class="text-lg leading-relaxed text-secondary-text-color">
+                Highly motivated and accomplished **Postdoctoral Researcher** with a strong background in **physics-informed advanced computational modelling** (Discrete Element Method, Computational Fluid Dynamics, Electrochemical Modelling) of Lithium-ion Batteries Electrode Manufacturing. Possessing a proven track record in interdisciplinary research, evidenced by publications in peer-reviewed journals, presentations at international conferences, active collaboration with leading institutions like the University of Oxford, and involvement in projects funded by prestigious bodies like the Faraday Institution.
+            </p>
+            <p class="text-lg leading-relaxed mt-4 text-secondary-text-color">
+                Seeking to leverage expertise in **particle technology and electrode manufacturing**, focusing on the development of next-generation electrodes for the lithium-ion and solid-state batteries. My vision is to advance both fundamental understanding and practical applications in the field through collaboration with both industries and academia across Europe and the UK.
+            </p>
+        </section>
+
+        <section id="education" class="card scroll-reveal">
+            <h2 class="section-title">Academic Journey</h2>
+            <ul class="list-none p-0 m-0">
+                <li class="mb-5 border-b pb-4 border-dashed border-border-color last:border-b-0 last:pb-0">
+                    <h3 class="text-xl font-semibold text-darker-blue mb-1">Doctorate (2025)</h3>
+                    <p class="text-lg flex justify-between items-center">
+                        <span>Indian Institute of Technology (IIT) Bombay, India</span>
+                        <span class="text-gray-600 italic text-base">Granular Physics</span>
+                    </p>
+                </li>
+                <li class="mb-5 border-b pb-4 border-dashed border-border-color last:border-b-0 last:pb-0">
+                    <h3 class="text-xl font-semibold text-darker-blue mb-1">Post Graduation (2019)</h3>
+                    <p class="text-lg flex justify-between items-center">
+                        <span>Indian Institute of Technology (IIT) Bombay, India</span>
+                        <span class="text-gray-600 italic text-base">Energy Science and Engineering</span>
+                    </p>
+                </li>
+                <li class="mb-3">
+                    <h3 class="text-xl font-semibold text-darker-blue mb-1">Graduation (2016)</h3>
+                    <p class="text-lg flex justify-between items-center">
+                        <span>Banaras Hindu University, India</span>
+                        <span class="text-gray-600 italic text-base">Mathematics and Physics</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects" class="card scroll-reveal">
+            <h2 class="section-title">Key Research Projects</h2>
+            <p class="text-lg leading-relaxed mb-6 text-secondary-text-color">
+                My research is deeply rooted in a multi-scale approach, bridging fundamentals of particle science and granular mechanics with real-world applications in energy storage. I investigate the particle-level behaviour of a granular system to understand the physics behind its bulk behaviour, particularly within battery technologies. Each project below demonstrates my ability to blend theoretical understanding, advanced computational modelling, and problem-solving to improve the physical understanding and performance of complex systems.
+            </p>
+
+            <div class="mb-6 flex flex-wrap gap-2 justify-center">
+                <button class="filter-button active" data-filter="all">All Projects</button>
+                <button class="filter-button" data-filter="postdoc">Postdoctoral</button>
+                <button class="filter-button" data-filter="phd">PhD</button>
+                <button class="filter-button" data-filter="msc">MSc</button>
+                <button class="filter-button" data-filter="battery">Battery Related</button>
+                <button class="filter-button" data-filter="simulation">Simulation Based</button>
+                <button class="filter-button" data-filter="experimental">Experimental Insight</button> </div>
+
+            <div id="projects-container">
+                <div class="project-item" data-categories="postdoc battery simulation experimental">
+                    <h3 class="mb-1">Understanding the Physics Behind the Calendering Behaviour of a Lithium-ion Battery Electrode</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield | Jan 2025 - Present</p>
+                    <p class="text-sm mb-3"><strong class="text-primary-blue">Funding:</strong> This project is part of a larger initiative funded by the <strong class="text-darker-blue">Faraday Institution, UK</strong>.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#LithiumIonBatteries</span>
+                        <span class="project-tag">#DEM</span>
+                        <span class="project-tag">#Calendering</span>
+                        <span class="project-tag">#ElectrodeManufacturing</span>
+                    </div>
+                    <div class="expandable-content" id="project1-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> To investigate the compression behaviour of battery electrodes using a combined Discrete Element Method (DEM) and experimental approach.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Successfully demonstrated that an empirical equation, traditionally applied to pharmaceutical powders, accurately models battery electrode compression. This work provides critical insights into optimizing electrode manufacturing by understanding particle packing and deformation.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project1-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                        </div>
+                </div>
+
+                <div class="project-item" data-categories="postdoc battery simulation">
+                    <h3 class="mb-1">Role of Calendering Temperature on Mechanical and Electrochemical Properties of LiB Electrode using DEM</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">Postdoctoral Researcher | The University of Sheffield (in collaboration with The University of Oxford) | Nov 2024 - Present</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#ElectrochemicalModelling</span>
+                        <span class="project-tag">#DEM</span>
+                        <span class="project-tag">#BatteryDesign</span>
+                    </div>
+                    <div class="expandable-content" id="project2-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> To develop a comprehensive simulation model to explore the influence of calendering machine temperature and pressure on the microstructure and subsequent electrochemical performance, specifically by analysing the behaviour of active material particles within lithium-ion battery electrodes.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Implemented the EEPA model for polydisperse spherical active material particles within DEM, coupled with a rigid bond model for the CBD phase, and integrated a heat conduction model to simulate particle-level thermal effects. Utilised COMSOL for electrochemical performance evaluation, demonstrating interdisciplinary modelling capabilities.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Analysed the effect of temperature on the microstructural evolution of an electrode and its implications for battery performance, offering better control over the calendering parameters to design next-gen electrodes.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project2-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-categories="phd simulation granular-physics">
+                    <h3 class="mb-1">The effect of the ratio of tangential to normal spring stiffness on the bulk-behaviour of a vibrated bed.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | June 2023 - Mar 2024</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#GranularPhysics</span>
+                        <span class="project-tag">#Simulation</span>
+                        <span class="project-tag">#MaterialScience</span>
+                    </div>
+                    <div class="expandable-content" id="project3-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Investigated the role of the ratio of tangential to normal spring stiffness of the linear spring dashpot on the granular temperature, stresses and volume fraction of a vertically vibrated bed.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> It is shown that the ratio of $2/7$ presents a significant difference in the bulk-behaviour of the vibrated bed in comparison to any other value in the physical regime. This work makes a significant contribution to how a simulation modelling parameter influences the bulk behaviour.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project3-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-categories="phd simulation granular-physics">
+                    <h3 class="mb-1">Distribution of energies in a vertically vibrated granular bed.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Dec 2022 - Jan 2024</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#EnergyDistribution</span>
+                        <span class="project-tag">#VibroFluidizedBeds</span>
+                        <span class="project-tag">#ParticlePhysics</span>
+                    </div>
+                    <div class="expandable-content" id="project4-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Investigated the impact of interparticle friction on the micro and macroscopic behaviour of particles in vibro-fluidised beds, a process relevant to various industrial applications including the handling and mixing of granular materials in pharmaceutical and food industries.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Performed DEM simulations for particles of varying friction in a vertically vibrated bed to obtain the distribution of energies within the bed. Exchange of energies within the modes is quantified by tracking individual contacts.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Demonstrated that the equipartition of energies among the translational and rotational modes does not hold for any real granular system. This work gives a fundamental understanding of how vibrational energy is distributed among different modes.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project4-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-categories="phd simulation battery granular-physics">
+                    <h3 class="mb-1">Impact of Vibrational Energy on the Deagglomeration of Cohesive Granular Particles.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Nov 2023</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#Deagglomeration</span>
+                        <span class="project-tag">#CohesiveParticles</span>
+                        <span class="project-tag">#PowderProcessing</span>
+                    </div>
+                    <div class="expandable-content" id="project5-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Modelled vibration-induced deagglomeration as a rate kinetic process at the particle level, crucial for understanding and controlling powder processing in battery manufacturing, especially for fine active materials.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Studied the temporal evolution of cluster size, consisting of multiple interacting particles, under vertical vibrations to determine rate constants governing their breakup.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Established deagglomeration as a first-order process and demonstrated an exponential relationship between the rate constant and agglomerate strength/input vibrational energy, providing mechanistic insights into how external energy can break inter-particle bonds.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project5-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-categories="phd simulation granular-physics">
+                    <h3 class="mb-1">DEM Study on the Mixing of Dumbbell Shaped Particles in a Cylindrical Container.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Oct 2022</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#NonSphericalParticles</span>
+                        <span class="project-tag">#Mixing</span>
+                        <span class="project-tag">#DEMSimulation</span>
+                    </div>
+                    <div class="expandable-content" id="project6-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Investigated the mixing and segregation behavior of non-spherical particles (dumbbell-shaped) under vibration, highly relevant to the uniform distribution of novel, non-spherical electrode materials and additives.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Quantified granular temperature, coordination number, collision frequency, and velocity distribution by tracking individual non-spherical particles for varying aspect ratios and vibrational amplitudes.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Revealed that fluctuating kinetic energies increases with energy input primarily for lower aspect ratio particles, and coordination number correlates with aspect ratio, providing insights into how particle shape influences mixing efficiency in a granular system consisting of non-spherical particles.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project6-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item" data-categories="phd simulation battery granular-physics">
+                    <h3 class="mb-1">Morphological Analysis of Cohesive Particles Generated Using DEM.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Jan 2019 - Sep 2021</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#AgglomerateMorphology</span>
+                        <span class="project-tag">#CohesiveDEM</span>
+                        <span class="project-tag">#ParticleInteractions</span>
+                    </div>
+                    <div class="expandable-content" id="project7-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Explored the influence of interparticle cohesiveness on the morphology of agglomerates, critical for controlling the properties and performance of active materials in battery electrodes.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Generated agglomerates of varying sizes via DEM, explicitly modelling interparticle contacts using a linear spring-dashpot model to simulate cohesive forces between particles.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Quantified morphological parameters (porosity, coordination number, fractal dimension) and demonstrated their increase with cohesiveness, enhancing understanding of how particle interactions influence the final structure of a cohesive system.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project7-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-item border-b-0 pb-0 mb-0" data-categories="msc simulation battery experimental">
+                    <h3 class="mb-1">CFD Analysis of a Custom-Built Atomic Layer Deposition (ALD) Reactor.</h3>
+                    <p class="text-gray-700 text-sm italic mb-2">MSc. Project | IIT Bombay | Jan 2018 - Dec 2018</p>
+                    <div class="project-tags">
+                        <span class="project-tag">#CFD</span>
+                        <span class="project-tag">#ALD</span>
+                        <span class="project-tag">#ThinFilmCoating</span>
+                    </div>
+                    <div class="expandable-content" id="project8-content">
+                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
+                            <li><strong class="text-darker-blue">Objective:</strong> Simulated carrier gas behavior within an ALD reactor, a technique used for thin-film coating on individual particles to enhance their stability and performance.</li>
+                            <li><strong class="text-darker-blue">Approach:</strong> Performed CFD simulations on ANSYS Fluent to determine temperature and velocity profiles of nitrogen for varying inlet flow rates, optimizing the uniform delivery of precursors to particles.</li>
+                            <li><strong class="text-darker-blue">Contribution:</strong> Identified high temperature gradients and turbulence near the reactor inlet, providing valuable insights for optimizing ALD processes for particle surface modification.</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap items-center">
+                        <button class="expand-button" onclick="toggleExpand('project8-content', this)">
+                            Read More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="card scroll-reveal">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-lg">
+                <div class="skills-grid-item" data-skill-category="programming">
+                    <h3 class="mb-1">Programming Languages:</h3>
+                    <p class="skill-list text-secondary-text-color">Python (NumPy, SciPy, Matplotlib, Pandas, Scikit-learn), MATLAB, HTML, CSS</p>
+                </div>
+                <div class="skills-grid-item" data-skill-category="simulation">
+                    <h3 class="mb-1">Simulation Packages:</h3>
+                    <p class="skill-list text-secondary-text-color">LAMMPS, LIGGGHTS, Altair EDEM, MFIX, Ansys FLUENT, COMSOL, OpenFOAM</p>
+                </div>
+                <div class="skills-grid-item" data-skill-category="visualization">
+                    <h3 class="mb-1">Visualisation Tools:</h3>
+                    <p class="skill-list text-secondary-text-color">OVITO, PARAVIEW</p>
+                </div>
+                <div class="skills-grid-item" data-skill-category="other">
+                    <h3 class="mb-1">Other Tools & Libraries:</h3>
+                    <p class="skill-list text-secondary-text-color">ImageJ, LaTeX, Origin, GNUplot</p>
+                </div>
+                <div class="lg:col-span-3 skills-grid-item" data-skill-category="experimental">
+                    <h3 class="mb-1">Experimental Techniques:</h3>
+                    <p class="skill-list text-secondary-text-color">Cell assembly (coin, pouch, 3-electrode), INSTRON compression testing, Electrode manufacturing, Particle Image Velocimetry (PIV), X-ray Diffraction (XRD), Atomic Layer Deposition (ALD).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="card scroll-reveal">
+            <h2 class="section-title">Awards, Grants & Achievements</h2>
+            <ul class="list-disc pl-5 text-base achievement-list text-secondary-text-color">
+                <li class="mb-3"><strong class="text-darker-blue">Academic:</strong> Best Poster Award - ChemEng Day UK, 2025.</li>
+                <li class="mb-3"><strong class="text-darker-blue">Academic:</strong> Received grant of £2000 from IIT Bombay to attend various national and international conferences.</li>
+                <li class="mb-3"><strong class="text-darker-blue">Collaboration:</strong> Actively collaborating with research groups at the University of Oxford on further enhancing inter-institutional research ties.</li>
+                <li class="mb-3"><strong class="text-darker-blue">Funding:</strong> Involved in a research project supported by the Faraday Institution, contributing to cutting-edge battery science initiatives.</li>
+            </ul>
+        </section>
+
+        <section id="publications" class="card scroll-reveal">
+            <h2 class="section-title">Publications & Dissemination <span class="text-xl text-gray-500 font-normal block mt-2">(Highlighting International Reach)</span></h2>
+            <h3 class="text-xl font-semibold text-darker-blue mb-3">Journal Publications:</h3>
+            <ul class="list-disc pl-5 text-base pub-list">
+                <li>Tiwari, A., M. Bose, Breakage of an agglomerate under vibration. (To submit Physics of Fluids)</li>
+                <li>Tiwari, A., M. Bose, Understanding the role of particle friction coefficient on the equipartition and scaling of granular temperature using DEM. (To submit Physical Review Letters)</li>
+                <li>Tiwari, A., S. Ganguly, M. Bose and V. Kumaran (2025), Role of the ratio of tangential to normal stiffness coefficient on the behaviour of vibrofluidized particles, <a href="#" target="_blank">Physical Review E (Accepted)</a>.</li>
+                <li>Tiwari, A. and M. Bose, 2023. DEM simulation of dumbbell shaped particles under vertical vibration. <a href="#" target="_blank">Particulate Science and Technology</a>, pp.1-12.</li>
+                <li>Tiwari, A. and M. Bose, 2022. Morphological analysis of nanoparticle agglomerates generated using DEM simulation. <a href="#" target="_blank">Particulate Science and Technology, 40(3), pp.373-381</a>.</li>
+                <li>Tiwari, A., 2020. Modelling and analysis of COVID-19 epidemic in India. <a href="#" target="_blank">Journal of Safety Science and Resilience, 1(2), pp.135-140</a>.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-darker-blue mt-6 mb-3">Conference Presentations:</h3>
+            <ul class="list-disc pl-5 text-base pub-list">
+                <li>Tiwari, A. et. al, 2025. Modeling the calendering process of lithium-ion battery electrodes using the Discrete Element Method, Powders and Grains, India.</li>
+                <li>Tiwari, A. and M.Bose, 2025. Modelling the breakage of a spherical agglomerate in a vertically vibrated granular bed, Powders and Grains, India.</li>
+                <li>M. Bose and A. Tiwari, 2024. Agglomeration and de-agglomeration of cohesive particles in a vertically vibrated bed, APS-DFD, USA.</li>
+                <li>Tiwari, A. and M. Bose, 2023. Numerical simulation of vibro-fluidised inelastic particles with roughness using DEM, DEM9, Germany.</li>
+                <li>Tiwari, A. and M. Bose, 2023. Rate kinetics of agglomeration and deagglomeration of nanoparticles using DEM, 11th ICMF, Japan.</li>
+                <li>Tiwari, A. and M. Bose, 2022. Impact of vibrational energy on the kinetics of deagglomeration of cohesive particles, CompFlu, India.</li>
+                <li>Tiwari, A. and M. Bose, 2020. Simulation of nano-agglomeration using the cohesive DEM algorithm, CompFlu, India.</li>
+                <li>Tiwari, A. Tomar, V. and M. Bose, 2020. Implementation of cohesive DEM to study agglomeration of nanoparticles, Third International Conference on Powder, Granule and Bulk solids: Innovations and Applications (PGBSIA), India.</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-darker-blue mt-6 mb-3">Oral Talks:</h3>
+            <ul class="list-disc pl-5 text-base pub-list">
+                <li>Tiwari, A. and M. Bose, 2024 (Online). Kinetic theory based understanding of inelastic and rough granular gas using DEM, Mercury DPM, University of Twente, Netherlands.</li>
+                <li>Tiwari, A. and M. Bose, 2023. Temporal dynamics of the deagglomeration process of cohesive particles.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="text-white py-8">
+        <div class="container text-center">
+            <p class="mb-4 text-lg">&copy; <span id="current-year"></span> Dr. Alok Tiwari. All rights reserved.</p>
+            <div class="footer-links mb-4">
+                <a href="#summary">Summary</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#publications">Publications</a>
+            </div>
+            <div class="social-icons text-3xl space-x-6">
+                <a href="mailto:alok.tiwari@sheffield.ac.uk" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourtwitterhandle" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Expand/Collapse Project Details
+        function toggleExpand(contentId, button) {
+            const content = document.getElementById(contentId);
+            content.classList.toggle('expanded');
+            button.classList.toggle('expanded');
+            button.querySelector('i').classList.toggle('fa-chevron-down');
+            button.querySelector('i').classList.toggle('fa-chevron-up');
+            button.firstChild.textContent = content.classList.contains('expanded') ? 'Read Less ' : 'Read More ';
+        }
+
+        // Project Filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const projectsContainer = document.getElementById('projects-container');
+            const projectItems = projectsContainer.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.dataset.filter;
+
+                    projectItems.forEach(item => {
+                        const categories = item.dataset.categories.split(' ');
+                        if (filter === 'all' || categories.includes(filter)) {
+                            item.classList.remove('hidden-project');
+                        } else {
+                            item.classList.add('hidden-project');
+                        }
+                    });
+                });
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Basic Scroll Reveal Effect
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
