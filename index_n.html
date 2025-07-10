@@ -329,7 +329,7 @@
                     <div class="expandable-content" id="project3-content">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Investigated the role of the ratio of tangential to normal spring stiffness of the linear spring dashpot on the granular temperature, stresses and volume fraction of a vertically vibrated bed.</li>
-                            <li><strong class="text-darkgray">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
+                            <li><strong class="text-darkgray">Approach:s</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> It is shown that the ratio of $2/7$ presents a significant difference in the bulk-behaviour of the vibrated bed in comparison to any other value in the physical regime. This work makes a significant contribution to how a simulation modelling parameter influences the bulk behaviour.</li>
                         </ul>
                     </div>
@@ -584,60 +584,4 @@
             const formResponseMessage = document.getElementById('form-response-message');
 
             collaborationForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                const email = document.getElementById('email').value;
-                const interest = document.getElementById('interest').value;
-                const message = document.getElementById('message').value;
-
-                // Basic validation
-                if (!email || !interest) {
-                    formResponseMessage.textContent = 'Please fill in your email and select an interest.';
-                    formResponseMessage.classList.remove('hidden', 'success');
-                    formResponseMessage.classList.add('error');
-                    return;
-                }
-
-                // In a real application, you would send this data to a backend server.
-                // For a static site, you can use a service like Formspree.io or Netlify Forms.
-                // Example for Formspree (replace YOUR_FORMSPREE_ENDPOINT with your actual endpoint):
-                // fetch('https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json'
-                //     },
-                //     body: JSON.stringify({ email: email, interest: interest, message: message })
-                // }).then(response => {
-                //     if (response.ok) {
-                //         formResponseMessage.textContent = 'Thank you for your interest! I will get back to you soon.';
-                //         formResponseMessage.classList.remove('hidden', 'error');
-                //         formResponseMessage.classList.add('success');
-                //         collaborationForm.reset(); // Clear the form
-                //     } else {
-                //         formResponseMessage.textContent = 'Something went wrong. Please try again later.';
-                //         formResponseMessage.classList.remove('hidden', 'success');
-                //         formResponseMessage.classList.add('error');
-                //     }
-                // }).catch(error => {
-                //     console.error('Error:', error);
-                //     formResponseMessage.textContent = 'Network error. Please try again.';
-                //     formResponseMessage.classList.remove('hidden', 'success');
-                //     formResponseMessage.classList.add('error');
-                // });
-
-
-                // For this example, we'll just simulate success and display a message.
-                console.log('Form Submitted:');
-                console.log('Email:', email);
-                console.log('Interest:', interest);
-                console.log('Message:', message);
-
-                formResponseMessage.textContent = 'Thank you for your interest! I will get back to you soon.';
-                formResponseMessage.classList.remove('hidden', 'error');
-                formResponseMessage.classList.add('success');
-                collaborationForm.reset(); // Clear the form
-            });
-        });
-    </script>
-</body>
-</html>
+                event.
