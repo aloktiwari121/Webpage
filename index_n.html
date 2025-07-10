@@ -50,7 +50,7 @@
             max-height: 1500px; /* Increased max-height for new content */
             transition: max-height 0.7s ease-in;
         }
-        .expand-button { /* Removed .gemini-button */
+        .expand-button {
             color: #0056B3;
             cursor: pointer;
             font-weight: 500;
@@ -63,11 +63,11 @@
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .expand-button:hover { /* Removed .gemini-button:hover */
+        .expand-button:hover {
             background-color: #0056B3;
             color: white;
         }
-        .expand-button i { /* Removed .gemini-button i */
+        .expand-button i {
             margin-left: 0.5rem;
             transition: transform 0.3s ease;
         }
@@ -88,7 +88,6 @@
             border: 4px solid white;
             margin-bottom: 1rem;
         }
-        /* Removed .llm-summary and .loading-spinner styles */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -186,6 +185,37 @@
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+
+        /* Navigation Bar Styles */
+        .nav-bar {
+            background-color: #0056B3; /* Matching section title color */
+            padding: 0.75rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-item {
+            margin: 0.5rem 1rem; /* Spacing between nav items */
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: #004085; /* Darker blue on hover */
+        }
     </style>
 </head>
 <body>
@@ -203,16 +233,28 @@
         </div>
     </header>
 
+    <nav class="nav-bar container">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li>
+            <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+            <li class="nav-item"><a href="#collaboration" class="nav-link">Collaboration</a></li>
+        </ul>
+    </nav>
+
     <main class="container">
 
-        <section class="card">
+        <section id="summary" class="card">
             <h2 class="text-3xl font-semibold section-title">Summary & Research Vision</h2>
             <p class="text-lg leading-relaxed">
                 Highly motivated and accomplished Postdoctoral Researcher with a strong background in physics-informed advanced computational modelling (Discrete Element Method, Computational Fluid Dynamics, Electrochemical Modelling) of Lithium-ion Batteries Electrode Manufacturing. Possessing a proven track record in interdisciplinary research, evidenced by publications in peer-reviewed journals, presentations at international conferences, active collaboration with leading institutions like the University of Oxford, and involvement in projects funded by prestigious bodies like the Faraday Institution. Seeking to leverage expertise in particle technology and electrode manufacturing, focusing on the development of next-generation electrodes for the lithium-ion and solid-state batteries. My vision is to advance both fundamental understanding and practical applications in the field through collaboration with both industries and academia across Europe and UK.
             </p>
         </section>
 
-        <section class="card">
+        <section id="education" class="card">
             <h2 class="text-3xl font-semibold section-title">Education</h2>
             <ul class="list-none p-0 m-0">
                 <li class="mb-3">
@@ -230,7 +272,7 @@
             </ul>
         </section>
 
-        <section class="card">
+        <section id="projects" class="card">
             <h2 class="text-3xl font-semibold section-title">Research Experience & Key Projects</h2>
             <p class="text-lg leading-relaxed mb-6">
                 My research is deeply rooted in a multi-scale approach, bridging fundamentals of particle science and granular mechanics with real-world applications in energy storage. I investigate the particle-level behaviour of a granular system to understand the physics behind its bulk behaviour, particularly within battery technologies. Each project below demonstrates my ability to blend theoretical understanding, advanced computational modelling, and problem-solving to improve the physical understanding and performance of the complex systems.
@@ -385,7 +427,7 @@
             </div>
         </section>
 
-        <section class="card">
+        <section id="skills" class="card">
             <h2 class="text-3xl font-semibold section-title">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-lg">
                 <div data-skill-category="programming">
@@ -413,7 +455,7 @@
 
         ---
 
-        <section class="card">
+        <section id="achievements" class="card">
             <h2 class="text-3xl font-semibold section-title">Awards, Grants & Achievements</h2>
             <ul class="list-disc pl-5 text-base achievement-list">
                 <li><strong class="text-darkgray">Academic:</strong> Best Poster Award - ChemEng Day UK, 2025.</li>
@@ -425,7 +467,7 @@
 
         ---
 
-        <section class="card">
+        <section id="publications" class="card">
             <h2 class="text-3xl font-semibold section-title">Publications & Dissemination <span class="text-xl text-gray-500">(Highlighting International Reach)</span></h2>
             <h3 class="text-xl font-semibold text-darkgray mb-3">Journal Publications:</h3>
             <ul class="list-disc pl-5 text-base pub-list">
@@ -459,7 +501,7 @@
 
         ---
 
-        <section class="card text-center">
+        <section id="collaboration" class="card text-center">
             <h2 class="text-3xl font-semibold section-title mb-4">Open for Collaboration & Discussion</h2>
             <p class="text-lg leading-relaxed mb-6">
                 I am always keen to connect with fellow researchers, industry professionals, and students for potential collaborations, discussions on exciting new research directions, or opportunities in advanced computational modeling and battery technology.
