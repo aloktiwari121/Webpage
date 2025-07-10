@@ -295,7 +295,7 @@
                     <div class="expandable-content" id="project1-content">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> To investigate the compression behaviour of battery electrodes using a combined Discrete Element Method (DEM) and experimental approach.</li>
-                            <li><strong class="text-darkgray">Approach:</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
+                            <li><strong class="text-darkgray">Approach:s</strong> Conducted uniaxial compression experiments and corresponding DEM simulations to explain the evolution of electrode microstructure, focusing on the arrangement and deformation of constituent particles under pressure.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> Successfully demonstrated that an empirical equation, traditionally applied to pharmaceutical powders, accurately models battery electrode compression. This work provides critical insights into optimizing electrode manufacturing by understanding particle packing and deformation.</li>
                         </ul>
                     </div>
@@ -329,7 +329,7 @@
                     <div class="expandable-content" id="project3-content">
                         <ul class="list-disc pl-5 text-base leading-relaxed">
                             <li><strong class="text-darkgray">Objective:</strong> Investigated the role of the ratio of tangential to normal spring stiffness of the linear spring dashpot on the granular temperature, stresses and volume fraction of a vertically vibrated bed.</li>
-                            <li><strong class="text-darkgray">Approach:s</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
+                            <li><strong class="text-darkgray">Approach:</strong> DEM simulations are performed with the linear spring dashpot with varying stiffness ratio. The effect of the ratio on the bulk as well as on the behaviour of individual particles is investigated.</li>
                             <li><strong class="text-darkgray">Contribution:</strong> It is shown that the ratio of $2/7$ presents a significant difference in the bulk-behaviour of the vibrated bed in comparison to any other value in the physical regime. This work makes a significant contribution to how a simulation modelling parameter influences the bulk behaviour.</li>
                         </ul>
                     </div>
@@ -510,7 +510,7 @@
                 If you have an idea, a question, or just want to connect, please feel free to reach out using the form below. I look forward to hearing from you!
             </p>
 
-            <form id="collaboration-form" class="max-w-md mx-auto text-left">
+            <form id="collaboration-form" class="max-w-md mx-auto text-left" action="https://formspree.io/f/mzzgndpw" method="POST">
                 <div class="mb-4">
                     <label for="interest" class="block text-gray-700 text-sm font-bold mb-2">What's your primary interest?</label>
                     <select id="interest" name="interest" class="form-select" required>
@@ -584,4 +584,36 @@
             const formResponseMessage = document.getElementById('form-response-message');
 
             collaborationForm.addEventListener('submit', function(event) {
-                event.
+                event.preventDefault(); // Prevent default form submission
+
+                // When using Formspree with standard HTML form submission (method="POST"),
+                // you typically don't need to manually fetch with JavaScript like this
+                // unless you want to prevent a full page reload or handle the response dynamically.
+                // For direct Formspree integration, the browser handles the POST request.
+
+                // The following JS code for showing a success/error message
+                // is useful if you were NOT using Formspree's redirect or wanted
+                // more dynamic feedback. For now, it simulates the client-side feedback.
+
+                const email = document.getElementById('email').value;
+                const interest = document.getElementById('interest').value;
+                const message = document.getElementById('message').value;
+
+                // Basic validation (client-side)
+                if (!email || !interest) {
+                    formResponseMessage.textContent = 'Please fill in your email and select an interest.';
+                    formResponseMessage.classList.remove('hidden', 'success');
+                    formResponseMessage.classList.add('error');
+                    return;
+                }
+
+                // Simulate success for client-side feedback
+                formResponseMessage.textContent = 'Thank you for your interest! I will get back to you soon.';
+                formResponseMessage.classList.remove('hidden', 'error');
+                formResponseMessage.classList.add('success');
+                collaborationForm.reset(); // Clear the form
+            });
+        });
+    </script>
+</body>
+</html>
