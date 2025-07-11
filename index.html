@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XC5791P8XG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC5791P8XG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-XC5791P8XG');
-</script>
-    
+        gtag('config', 'G-XC5791P8XG');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Alok Tiwari - Postdoctoral Researcher</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="https://placehold.co/32x32/0056B3/FFFFFF?text=AT" type="image/x-icon"> <style>
+    <link rel="icon" href="https://placehold.co/32x32/0056B3/FFFFFF?text=AT" type="image/x-icon">
+    <style>
         /* Custom Variables for Easier Theming */
         :root {
             --primary-blue: #0056B3; /* Your existing primary blue */
@@ -36,6 +36,9 @@
             background-color: var(--light-gray-bg);
             color: var(--text-color);
             line-height: 1.7; /* Slightly more relaxed line height */
+            /* ADDED: Padding to account for the sticky navigation bar */
+            padding-top: 100px; /* Adjust this value if your nav bar's height changes */
+            scroll-padding-top: 100px; /* For anchor links to scroll correctly below the nav */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -69,7 +72,7 @@
         }
 
         .card:hover {
-             transform: translateY(-5px); /* Lift card slightly on hover */
+            transform: translateY(-5px); /* Lift card slightly on hover */
         }
 
 
@@ -94,7 +97,7 @@
             right: 0;
             bottom: 0;
             background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05) 1px, transparent 1px),
-                              radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 1px, transparent 1px);
+                               radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 20px 20px;
             opacity: 0.4;
             pointer-events: none;
@@ -145,14 +148,14 @@
         .nav-bar {
             background-color: var(--card-bg); /* White background for nav */
             padding: 0.75rem 0;
-            margin-bottom: 2.5rem; /* More space */
+            /* margin-bottom: 2.5rem; This margin will be hidden by padding-top, consider removing if layout looks off */
             border-radius: 1rem; /* Consistent rounding */
             box-shadow: var(--shadow);
             position: sticky; /* Make navigation sticky */
             top: 0;
             z-index: 1000;
         }
-        
+
         .nav-list {
             display: flex;
             flex-wrap: wrap;
@@ -383,6 +386,12 @@
             .skills-grid-item {
                 margin-bottom: 1rem; /* Add some margin between stacked skill cards */
             }
+
+            /* ADJUSTED: Padding for body when nav items stack vertically */
+            body {
+                padding-top: 250px; /* This value might need slight tweaking based on exact nav height */
+                scroll-padding-top: 250px; /* Adjust for anchor links */
+            }
         }
     </style>
 </head>
@@ -579,232 +588,3 @@
                         </button>
                     </div>
                 </div>
-
-                <div class="project-item" data-categories="phd simulation granular-physics">
-                    <h3 class="mb-1">DEM Study on the Mixing of Dumbbell Shaped Particles in a Cylindrical Container.</h3>
-                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Sep 2021 - Oct 2022</p>
-                    <div class="project-tags">
-                        <span class="project-tag">#NonSphericalParticles</span>
-                        <span class="project-tag">#Mixing</span>
-                        <span class="project-tag">#DEMSimulation</span>
-                    </div>
-                    <div class="expandable-content" id="project6-content">
-                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
-                            <li><strong class="text-darker-blue">Objective:</strong> Investigated the mixing and segregation behavior of non-spherical particles (dumbbell-shaped) under vibration, highly relevant to the uniform distribution of novel, non-spherical electrode materials and additives.</li>
-                            <li><strong class="text-darker-blue">Approach:</strong> Quantified granular temperature, coordination number, collision frequency, and velocity distribution by tracking individual non-spherical particles for varying aspect ratios and vibrational amplitudes.</li>
-                            <li><strong class="text-darker-blue">Contribution:</strong> Revealed that fluctuating kinetic energies increases with energy input primarily for lower aspect ratio particles, and coordination number correlates with aspect ratio, providing insights into how particle shape influences mixing efficiency in a granular system consisting of non-spherical particles.</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap items-center">
-                        <button class="expand-button" onclick="toggleExpand('project6-content', this)">
-                            Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="project-item" data-categories="phd simulation battery granular-physics">
-                    <h3 class="mb-1">Morphological Analysis of Cohesive Particles Generated Using DEM.</h3>
-                    <p class="text-gray-700 text-sm italic mb-2">PhD. Project | IIT Bombay | Jan 2019 - Sep 2021</p>
-                    <div class="project-tags">
-                        <span class="project-tag">#AgglomerateMorphology</span>
-                        <span class="project-tag">#CohesiveDEM</span>
-                        <span class="project-tag">#ParticleInteractions</span>
-                    </div>
-                    <div class="expandable-content" id="project7-content">
-                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
-                            <li><strong class="text-darker-blue">Objective:</strong> Explored the influence of interparticle cohesiveness on the morphology of agglomerates, critical for controlling the properties and performance of active materials in battery electrodes.</li>
-                            <li><strong class="text-darker-blue">Approach:</strong> Generated agglomerates of varying sizes via DEM, explicitly modelling interparticle contacts using a linear spring-dashpot model to simulate cohesive forces between particles.</li>
-                            <li><strong class="text-darker-blue">Contribution:</strong> Quantified morphological parameters (porosity, coordination number, fractal dimension) and demonstrated their increase with cohesiveness, enhancing understanding of how particle interactions influence the final structure of a cohesive system.</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap items-center">
-                        <button class="expand-button" onclick="toggleExpand('project7-content', this)">
-                            Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="project-item border-b-0 pb-0 mb-0" data-categories="msc simulation battery experimental">
-                    <h3 class="mb-1">CFD Analysis of a Custom-Built Atomic Layer Deposition (ALD) Reactor.</h3>
-                    <p class="text-gray-700 text-sm italic mb-2">MSc. Project | IIT Bombay | Jan 2018 - Dec 2018</p>
-                    <div class="project-tags">
-                        <span class="project-tag">#CFD</span>
-                        <span class="project-tag">#ALD</span>
-                        <span class="project-tag">#ThinFilmCoating</span>
-                    </div>
-                    <div class="expandable-content" id="project8-content">
-                        <ul class="list-disc pl-5 text-base leading-relaxed mt-3 text-secondary-text-color">
-                            <li><strong class="text-darker-blue">Objective:</strong> Simulated carrier gas behavior within an ALD reactor, a technique used for thin-film coating on individual particles to enhance their stability and performance.</li>
-                            <li><strong class="text-darker-blue">Approach:</strong> Performed CFD simulations on ANSYS Fluent to determine temperature and velocity profiles of nitrogen for varying inlet flow rates, optimizing the uniform delivery of precursors to particles.</li>
-                            <li><strong class="text-darker-blue">Contribution:</strong> Identified high temperature gradients and turbulence near the reactor inlet, providing valuable insights for optimizing ALD processes for particle surface modification.</li>
-                        </ul>
-                    </div>
-                    <div class="flex flex-wrap items-center">
-                        <button class="expand-button" onclick="toggleExpand('project8-content', this)">
-                            Read More <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="card scroll-reveal">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-lg">
-                <div class="skills-grid-item" data-skill-category="programming">
-                    <h3 class="mb-1">Programming Languages:</h3>
-                    <p class="skill-list text-secondary-text-color">Python (NumPy, SciPy, Matplotlib, Pandas, Scikit-learn), MATLAB, HTML, CSS</p>
-                </div>
-                <div class="skills-grid-item" data-skill-category="simulation">
-                    <h3 class="mb-1">Simulation Packages:</h3>
-                    <p class="skill-list text-secondary-text-color">LAMMPS, LIGGGHTS, Altair EDEM, MFIX, Ansys FLUENT, COMSOL, OpenFOAM</p>
-                </div>
-                <div class="skills-grid-item" data-skill-category="visualization">
-                    <h3 class="mb-1">Visualisation Tools:</h3>
-                    <p class="skill-list text-secondary-text-color">OVITO, PARAVIEW</p>
-                </div>
-                <div class="skills-grid-item" data-skill-category="other">
-                    <h3 class="mb-1">Other Tools & Libraries:</h3>
-                    <p class="skill-list text-secondary-text-color">ImageJ, LaTeX, Origin, GNUplot</p>
-                </div>
-                <div class="lg:col-span-3 skills-grid-item" data-skill-category="experimental">
-                    <h3 class="mb-1">Experimental Techniques:</h3>
-                    <p class="skill-list text-secondary-text-color">Cell assembly (coin, pouch, 3-electrode), INSTRON compression testing, Electrode manufacturing, Particle Image Velocimetry (PIV), X-ray Diffraction (XRD), Atomic Layer Deposition (ALD).</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="achievements" class="card scroll-reveal">
-            <h2 class="section-title">Awards, Grants & Achievements</h2>
-            <ul class="list-disc pl-5 text-base achievement-list text-secondary-text-color">
-                <li class="mb-3"><strong class="text-darker-blue">Academic:</strong> Best Poster Award - ChemEng Day UK, 2025.</li>
-                <li class="mb-3"><strong class="text-darker-blue">Academic:</strong> Received grant of £2000 from IIT Bombay to attend various national and international conferences.</li>
-                <li class="mb-3"><strong class="text-darker-blue">Collaboration:</strong> Actively collaborating with research groups at the University of Oxford on further enhancing inter-institutional research ties.</li>
-                <li class="mb-3"><strong class="text-darker-blue">Funding:</strong> Involved in a research project supported by the Faraday Institution, contributing to cutting-edge battery science initiatives.</li>
-            </ul>
-        </section>
-
-        <section id="publications" class="card scroll-reveal">
-            <h2 class="section-title">Publications & Conferences <span class="text-xl text-gray-500 font-normal block mt-2"></span></h2>
-            <h3 class="text-xl font-semibold text-darker-blue mb-3">Journal Publications:</h3>
-            <ul class="list-disc pl-5 text-base pub-list">
-                <li>Tiwari, A., M. Bose, Breakage of an agglomerate under vibration. (To submit Physics of Fluids)</li>
-                <li>Tiwari, A., M. Bose, Understanding the role of particle friction coefficient on the equipartition and scaling of granular temperature using DEM. (To submit Physical Review Letters)</li>
-                <li>Tiwari, A., S. Ganguly, M. Bose and V. Kumaran (2025), Role of the ratio of tangential to normal stiffness coefficient on the behaviour of vibrofluidized particles, <a href="#" target="_blank">Physical Review E (Accepted)</a>.</li>
-                <li>Tiwari, A. and M. Bose, 2023. DEM simulation of dumbbell shaped particles under vertical vibration. <a href="https://www.tandfonline.com/doi/abs/10.1080/02726351.2023.2164877" target="_blank">Particulate Science and Technology</a>, pp.1-12.</li>
-                <li>Tiwari, A. and M. Bose, 2022. Morphological analysis of nanoparticle agglomerates generated using DEM simulation. <a href="https://www.tandfonline.com/doi/full/10.1080/02726351.2021.1973162" target="_blank">Particulate Science and Technology, 40(3), pp.373-381</a>.</li>
-                <li>Tiwari, A., 2020. Modelling and analysis of COVID-19 epidemic in India. <a href="https://www.sciencedirect.com/science/article/pii/S2666449620300311" target="_blank">Journal of Safety Science and Resilience, 1(2), pp.135-140</a>.</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-darker-blue mt-6 mb-3">Conference Presentations:</h3>
-            <ul class="list-disc pl-5 text-base pub-list">
-                <li>Tiwari, A. et. al, 2025. Modeling the calendering process of lithium-ion battery electrodes using the Discrete Element Method, Powders and Grains, India.</li>
-                <li>Tiwari, A. and M.Bose, 2025. Modelling the breakage of a spherical agglomerate in a vertically vibrated granular bed, Powders and Grains, India.</li>
-                <li>M. Bose and A. Tiwari, 2024. Agglomeration and de-agglomeration of cohesive particles in a vertically vibrated bed, APS-DFD, USA.</li>
-                <li>Tiwari, A. and M. Bose, 2023. Numerical simulation of vibro-fluidised inelastic particles with roughness using DEM, DEM9, Germany.</li>
-                <li>Tiwari, A. and M. Bose, 2023. Rate kinetics of agglomeration and deagglomeration of nanoparticles using DEM, 11th ICMF, Japan.</li>
-                <li>Tiwari, A. and M. Bose, 2022. Impact of vibrational energy on the kinetics of deagglomeration of cohesive particles, CompFlu, India.</li>
-                <li>Tiwari, A. and M. Bose, 2020. Simulation of nano-agglomeration using the cohesive DEM algorithm, CompFlu, India.</li>
-                <li>Tiwari, A. Tomar, V. and M. Bose, 2020. Implementation of cohesive DEM to study agglomeration of nanoparticles, Third International Conference on Powder, Granule and Bulk solids: Innovations and Applications (PGBSIA), India.</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-darker-blue mt-6 mb-3">Oral Talks:</h3>
-            <ul class="list-disc pl-5 text-base pub-list">
-                <li>Tiwari, A. and M. Bose, 2024 (Online). Kinetic theory based understanding of inelastic and rough granular gas using DEM, Mercury DPM, University of Twente, Netherlands.</li>
-                <li>Tiwari, A. and M. Bose, 2023. Temporal dynamics of the deagglomeration process of cohesive particles.</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer class="text-white py-8">
-        <div class="container text-center">
-            <p class="mb-4 text-lg">&copy; <span id="current-year"></span> Dr. Alok Tiwari. All rights reserved.</p>
-            <div class="footer-links mb-4">
-                <a href="#summary">Summary</a>
-                <a href="#education">Education</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#publications">Publications</a>
-            </div>
-            <div class="social-icons text-3xl space-x-6">
-                <a href="mailto:alok.tiwari@sheffield.ac.uk" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=Ug-9sW8AAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://www.linkedin.com/in/aloktiwariiit/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth Scrolling for Navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Expand/Collapse Project Details
-        function toggleExpand(contentId, button) {
-            const content = document.getElementById(contentId);
-            content.classList.toggle('expanded');
-            button.classList.toggle('expanded');
-            button.querySelector('i').classList.toggle('fa-chevron-down');
-            button.querySelector('i').classList.toggle('fa-chevron-up');
-            button.firstChild.textContent = content.classList.contains('expanded') ? 'Read Less ' : 'Read More ';
-        }
-
-        // Project Filtering
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-button');
-            const projectsContainer = document.getElementById('projects-container');
-            const projectItems = projectsContainer.querySelectorAll('.project-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const filter = button.dataset.filter;
-
-                    projectItems.forEach(item => {
-                        const categories = item.dataset.categories.split(' ');
-                        if (filter === 'all' || categories.includes(filter)) {
-                            item.classList.remove('hidden-project');
-                        } else {
-                            item.classList.add('hidden-project');
-                        }
-                    });
-                });
-            });
-
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Basic Scroll Reveal Effect
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Stop observing once visible
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.scroll-reveal').forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
-
-</body>
-</html>
